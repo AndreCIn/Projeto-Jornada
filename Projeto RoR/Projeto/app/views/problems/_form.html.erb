@@ -1,0 +1,39 @@
+<%= form_for @problem do |f| %>
+	<% if @problem.errors.any? %>
+		<div id='error_explanation'>
+			<h2>
+				<%= pluralize(@problem.errors.count,'error') %> prohibited this problem from being saved:
+			</h2>
+			<ul>
+				<% @problem.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<%end%>
+			</ul>
+		</div>
+	<%end%>
+
+	<p>
+		<%= f.label :Nome %><br>
+		<%= f.text_field :nome %>
+	</p>
+
+	<p>
+		<%= f.label :Link %><br>
+		<%= f.text_field :link %>
+	</p>
+
+	<p>
+		<%= f.label :Dificuldade %><br>
+		<%= f.text_field :dificuldade %>
+	</p>
+
+	<p>
+		<%= f.label :Categoria %><br>
+		<%= f.text_field :categoria %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<%end%>
