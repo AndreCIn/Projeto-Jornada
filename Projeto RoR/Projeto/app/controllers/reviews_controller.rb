@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 	def create
 		@problem = Problem.find(params[:problem_id])
-		@problem = @problem.reviews.create(review_params)
+		@review = @problem.reviews.create(review_params)
 
 		@review.save
 		redirect_to problem_path(@problem)

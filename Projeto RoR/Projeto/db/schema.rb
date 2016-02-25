@@ -32,16 +32,4 @@ ActiveRecord::Schema.define(version: 20160223131600) do
 
   add_index "reviews", ["problem_id"], name: "index_reviews_on_problem_id"
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "login"
-    t.string   "password"
-    t.string   "age"
-    t.string   "email"
-    t.string   "job"
-    t.string   "favorito"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end

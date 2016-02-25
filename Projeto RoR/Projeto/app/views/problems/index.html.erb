@@ -1,11 +1,12 @@
 <h1>Listando Problemas</h1>
 
-<table>
+<table border="4">
+
 	<tr>
 		<th>Nome</th>
 		<th>Categoria</th>
 		<th>Dificuldade</th>
-		<th>Link</th>
+		<th>Link</th>		
 	</tr>
 
 	<% @problems.each do |problem| %>
@@ -13,8 +14,10 @@
 			<td><%= problem.nome %></td>
 			<td><%= problem.categoria %></td>
 			<td><%= problem.dificuldade %></td>
-			<td><%= problem.link %></td>
-			<td><%= link_to 'Apagar', problem_path(problem), method: :delete, data: {confirm: 'Tem Certeza?'} %></td>
+			<td><%= problem.link %></td>			
+			<td><%= button_to 'Visualizar', problem_path(problem), :class => "btn btn-default", :method => :get %><br>	
+			<td><%= button_to 'Apagar', problem_path(problem), :class => "btn btn-default",  :method => :get, method: :delete, data: {confirm:"Tem Certeza?"} %><br>					
+			<td><%= button_to 'Editar', edit_problem_path(problem), :class => "btn btn-default", :method => :get %><br>
 		</tr>
 	<%end%>
 </table>
